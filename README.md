@@ -12,8 +12,14 @@ composer require milanspv/php-inline-images
 ```php
 <?php
 
+// first way to initialize the object
+$inliner = new InlineImages\Converter();
+$inliner->setPath('/path/to/img.png');
+
+// second way to initialize the object
 $inliner = new InlineImages\Converter('/path/to/img.png');
 
+// convert image
 echo '<img src="'.$inliner->convert().'"/>';
 //or for css
 echo 'background: url('.$inliner->convert().')';
