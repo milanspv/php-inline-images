@@ -12,7 +12,7 @@ if (version_compare(PHP_VERSION, '5.3.0', '<')) {
 spl_autoload_register(function ($class) {
 
     // project-specific namespace prefix
-    $prefix = 'InlineImages\\';
+    $prefix = 'Milanspv\\InlineImages\\';
 
     // does the class use the namespace prefix?
     $len = strlen($prefix);
