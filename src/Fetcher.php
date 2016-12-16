@@ -1,5 +1,5 @@
 <?php
-namespace InlineImages;
+namespace Milanspv\InlineImages;
 
 class Fetcher {
     private $path;
