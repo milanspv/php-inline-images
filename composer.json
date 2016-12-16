@@ -4,7 +4,7 @@
     "keywords": ["inline", "image", "base64", "svg", "css", "src"],
     "type": "library",
     "license": "MIT",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "homepage": "https://github.com/milanspv/php-inline-images",
     "require": {
         "php": "^5.3.0 || ^7.0"
