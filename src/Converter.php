@@ -12,7 +12,7 @@ class Converter {
      * Converter constructor
      * @param string $path The file path to convert (local or http path)
      */
-    function __construct($path) {
+    function __construct($path = null) {
         $this->path = $path;
     }
 
@@ -47,5 +47,15 @@ class Converter {
      */
     function getPath() {
       return $this->path;
+    }
+
+    /**
+     * Set the current file path
+     *
+     * @param string $path
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
     }
 }
