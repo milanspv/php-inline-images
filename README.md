@@ -9,7 +9,7 @@ A PHP lib to handle image inlining in your (css, img src, etc.)
 
 # Install
 ```bash
-composer require koren/inline-images
+composer require milanspv/php-inline-images
 ```
 
 # Convert an image to an inline string value
