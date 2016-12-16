@@ -8,60 +8,60 @@ class ConverterTest extends PHPUnit_Framework_TestCase {
   */
   public function testConstructorError()
   {
-      $converter = new InlineImages\Converter();
+      $converter = new Milanspv\InlineImages\Converter();
   }
 
   public function testConstructor()
   {
-      $converter = new InlineImages\Converter('/path/to/img');
+      $converter = new Milanspv\InlineImages\Converter('/path/to/img');
       $this->assertEquals('/path/to/img', $converter->getPath());
   }
 
   public function testInliningOnRelativePath() {
     global $png;
-    $converter = new InlineImages\Converter('tests/img.png');
+    $converter = new Milanspv\InlineImages\Converter('tests/img.png');
     $this->assertEquals($png, $converter->convert());
   }
 
   public function testInliningOnAbsolutePath() {
     global $png;
-    $converter = new InlineImages\Converter('tests/img.png');
+    $converter = new Milanspv\InlineImages\Converter('tests/img.png');
     $this->assertEquals($png, $converter->convert());
   }
 
   public function testInliningOnRemotePath() {
     global $remoteJpg;
-    $converter = new InlineImages\Converter('http://www.imagemagick.org/Usage/annotating/logo.jpg');
+    $converter = new Milanspv\InlineImages\Converter('http://www.imagemagick.org/Usage/annotating/logo.jpg');
     $this->assertEquals($remoteJpg, $converter->convert());
   }
 
   public function testInliningOnRemoteSvg() {
     global $svg;
-    $converter = new InlineImages\Converter('https://upload.wikimedia.org/wikipedia/en/2/22/Heckert_GNU_white.svg');
+    $converter = new Milanspv\InlineImages\Converter('https://upload.wikimedia.org/wikipedia/en/2/22/Heckert_GNU_white.svg');
     $this->assertEquals($svg, $converter->convert());
   }
 
   public function testInliningOnPng() {
     global $png;
-    $converter = new InlineImages\Converter('tests/img.png');
+    $converter = new Milanspv\InlineImages\Converter('tests/img.png');
     $this->assertEquals($converter->convert(), $png);
   }
 
   public function testInliningOnJpg() {
     global $jpg;
-    $converter = new InlineImages\Converter('tests/img.jpg');
+    $converter = new Milanspv\InlineImages\Converter('tests/img.jpg');
     $this->assertEquals($jpg, $converter->convert());
   }
 
   public function testInliningOnGif() {
     global $gif;
-    $converter = new InlineImages\Converter('tests/img.gif');
+    $converter = new Milanspv\InlineImages\Converter('tests/img.gif');
     $this->assertEquals($gif, $converter->convert());
   }
 
   public function testInliningOnSVG() {
     global $svg;
-    $converter = new InlineImages\Converter('tests/img.svg');
+    $converter = new Milanspv\InlineImages\Converter('tests/img.svg');
     $this->assertEquals($svg, $converter->convert());
   }
 
@@ -70,7 +70,7 @@ class ConverterTest extends PHPUnit_Framework_TestCase {
   * @expectedExceptionMessage  Invalid Path/URL provided
   */
   public function testInliningNonExistantFile() {
-    $converter = new InlineImages\Converter('tests/img');
+    $converter = new Milanspv\InlineImages\Converter('tests/img');
     $converter->convert();
   }
 }
